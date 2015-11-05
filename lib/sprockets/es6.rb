@@ -48,6 +48,6 @@ module Sprockets
 
   append_path Babel::Transpiler.source_path
   register_mime_type 'text/ecmascript-6', extensions: ['.es6'], charset: :unicode
+  register_preprocessor 'text/ecmascript-6', DirectiveProcessor.new(:comments => "//")
   register_transformer 'text/ecmascript-6', 'application/javascript', ES6
-  register_preprocessor 'text/ecmascript-6', DirectiveProcessor
 end
